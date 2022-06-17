@@ -1,19 +1,17 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - book_room
-  - get_name
-  - no_of_rooms
-  - tell_date
-  - ask_pics
-  - affirm
-  - deny
+- affirm
+- ask_pics
+- book_room
+- deny
+- get_name
+- greet
+- no_of_rooms
+- tell_date
 entities:
-  - name
-  - no_of_room
-  - date
-
+- name
+- date
+- no_of_room
 slots:
   name:
     type: text
@@ -30,30 +28,34 @@ slots:
     mappings:
     - type: from_entity
       entity: date
-
 responses:
   utter_ask:
-  - text: "hii! how can i help you"
+  - text: hii! how can i help you
   utter_askname:
-  - text: "what is your name"
+  - text: what is your name
   utter_askrooms:
-  - text: "okay {name} how many rooms you want to book"
+  - text: okay {name} how many rooms you want to book
   utter_askdate:
-  - text: "which date?"
+  - text: which date?
   utter_confirmation:
-  - text: "great {name} your {noofrooms} rooms are booked on {date}"
+  - text: great {name} your {no_of_room} rooms are booked on {date}
   utter_pics:
-  - text: "here are some pics for you"
-    image: "https://media.istockphoto.com/photos/3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv-picture-id1066999762?s=612x612"
+  - text: here are some pics for you
+    image: https://media.istockphoto.com/photos/3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv-picture-id1066999762?s=612x612
     buttons:
-      - title: "yes you want to book rooms"
-        payload: '/affirm'
-      - title: "no i don't want to book rooms"
-        payload: '/deny'
-
+    - title: yes you want to book rooms
+      payload: /affirm
+    - title: no i don't want to book rooms
+      payload: /deny
   utter_cancelation:
-  - text: "sorry for inconvience"
-
+  - text: sorry for inconvience
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+actions:
+- utter_ask
+- utter_askdate
+- utter_askname
+- utter_askrooms
+- utter_confirmation
+- utter_pics

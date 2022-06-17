@@ -35,3 +35,32 @@ stories:
 #   - action: utter_pics
 #   - intent: deny
 #   - action: utter_cancelation
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask
+  - intent: book_room
+  - action: utter_askname
+  - intent: get_name
+    entities:
+    - name: akash verma
+  - slot_was_set:
+    - name: akash verma
+  - action: utter_askrooms
+  - intent: no_of_rooms
+    entities:
+    - no_of_room: '5'
+  - slot_was_set:
+    - no_of_room: '5'
+  - action: utter_askdate
+  - intent: tell_date
+    entities:
+    - date: Tommorow
+  - slot_was_set:
+    - date: Tommorow
+  - action: utter_ask
+  - intent: ask_pics
+  - action: utter_pics
+  - intent: affirm
+  - action: utter_confirmation
+  - intent: deny

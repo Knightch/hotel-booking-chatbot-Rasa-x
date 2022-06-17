@@ -1,48 +1,29 @@
 version: "3.1"
-
 nlu:
 - intent: book_room
   examples: |
     - i want to book a room
     - i want a room
     - i want a room for rent
-
 - intent: get_name
   examples: |
     - my name is [Akash Verma](name)
     - [akash verma](name)
     - my self [akash verma](name)
-
-- synonym: name
-  examples: |
-    - Aman
-    - vikash
-    - sachin
-    - vipin
-    - anand
-    - aditya
-    - samay
-  
-  
+    - [akash verma](name)
 - intent: ask_pics
   examples: |
     - can you show some pics of rooms
     - show some pics
     - how's rooms are looking
-
 - intent: no_of_rooms
   examples: |
     - [1](no_of_room)
-
-- regex: no_of_room
-  examples: |
-    - ^[1-9][0-9]?$|^100$
-
+    - [5](no_of_room)
 - intent: tell_date
   examples: |
     - [Tommorow](date)
-
-
+    - [Tommorow](date)
 - intent: greet
   examples: |
     - hey
@@ -58,7 +39,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
+    - hii
 - intent: affirm
   examples: |
     - yes
@@ -67,7 +48,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -77,4 +57,15 @@ nlu:
     - don't like that
     - no way
     - not really
-
+- synonym: name
+  examples: |
+    - Aman
+    - vikash
+    - sachin
+    - vipin
+    - anand
+    - aditya
+    - samay
+- regex: no_of_room
+  examples: |
+    - ^[1-9][0-9]?$|^100$
