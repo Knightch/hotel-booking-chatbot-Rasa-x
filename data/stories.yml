@@ -1,0 +1,37 @@
+version: "3.1"
+
+stories:
+
+- story: book a hotel
+  steps:
+  - intent: greet
+  - action: utter_ask
+  - intent: book_room
+  - action: utter_askname
+  - intent: get_name
+  - action: utter_askrooms
+  - intent: no_of_rooms
+  - action: utter_askdate
+  - intent: tell_date
+  - action: utter_ask
+  - intent: ask_pics
+  - action: utter_pics
+  - intent: affirm
+  - action: utter_confirmation
+
+# - story: book not a hotel
+#   steps:
+#   - intent: greet
+#   - action: utter_ask
+#   - intent: book_room
+#   - action: utter_askname
+#   - intent: get_name
+#   - action: utter_askrooms
+#   - intent: no_of_rooms
+#   - action: utter_askdate
+#   - intent: tell_date
+#   - action: utter_ask
+#   - intent: ask_pics
+#   - action: utter_pics
+#   - intent: deny
+#   - action: utter_cancelation
